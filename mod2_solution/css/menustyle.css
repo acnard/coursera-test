@@ -9,8 +9,20 @@
     color: maroon;
 
   }
-
+ 
   p {
+      padding: 10px;
+  }
+  .title {
+      position: relative;
+      color: violet;
+      background-color: wheat;
+      width: 150px;
+      height: 40px;
+
+  }
+
+  .box {
     border: 1px solid black;
     background-color: goldenrod;
     height: 200px;
@@ -18,20 +30,22 @@
     margin-right: auto;
     font-family: Helvetica;
     color: white;
-    padding-top: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
+ /*   padding-left: 10px;
+    padding-right: 10px;*/
 
   }
-  div {
+
+  section {
     float: left;
-    background-color: mediumslateblue;
+    background-color: mediumslateblue; 
     padding: 15px;
   }
+  .frame {
+      background-color: tomato;
 
-  .row {
-      width: 100%;
   }
+
+
 /* Simple Responsive Framework. */
 
 
