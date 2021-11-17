@@ -6,49 +6,77 @@
   }
   h1 {
     margin-bottom: 15px;
-    color: maroon;
+    color: steelblue;
 
   }
  
   p {
-      padding: 10px;
+    padding: 10px;
+    padding-top: 50px;
   }
+
+  /* the title that goes at the top of each visible text box 
+     it is positioned with absolute offsets relative to the containing
+     box (which in turn must have position:relative */
   .title {
-      position: relative;
-      color: violet;
-      background-color: wheat;
-      width: 150px;
-      height: 40px;
-
+    position: absolute;
+    right: 0px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    color: navajowhite;
+    background-color: wheat;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    padding: 10px;
   }
 
+  /* change the background color of each title div based on its id */
+  #chicken {
+    background-color: peru;
+  }
+  #beef {
+    background-color: brown;
+  }
+  #sushi {
+    background-color: palevioletred;
+  }
+
+  /* the visible text boxes that go inside each inner layout section */
   .box {
     border: 1px solid black;
     background-color: goldenrod;
     height: 200px;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     font-family: Helvetica;
     color: white;
- /*   padding-left: 10px;
-    padding-right: 10px;*/
+    position: relative;   /*create anchor for the offsets of titles that go inside*/
+   }
 
-  }
 
-  section {
+/* for the layout we use three inner sections 
+   nested inside a fourth outer section. All four sections are 
+   left-floated and have 15px padding. 
+   The three inner sections will contain the visible text boxes.
+   The padding ensures even spacing around and between boxes
+*/ 
+   section {
     float: left;
     background-color: mediumslateblue; 
     padding: 15px;
-  }
-  .frame {
-      background-color: tomato;
+    }
+    /*just for development, we give the outer section a different color*/
+    section.frame {
+        background-color: tomato;
+    
+        }
 
-  }
+    /* RESPONSIVE PART (the first two inner sections are narrow, 
+        and the third is wide) */
 
-
-/* Simple Responsive Framework. */
-
-
+    /* for wide screens we want them all in a row */
     @media (min-width: 992px) {
         .narrow {
             width: 33.33%;
@@ -58,7 +86,7 @@
             width: 33.33%;
         }
     }
-
+    /*for tablets we want the two narrow side by side, and the wide below */
     @media (min-width: 768px) and (max-width: 991px) {
         .narrow {
             width: 50%;
@@ -68,7 +96,7 @@
             width: 100%;
         }
     }
-
+    /* for phonse we want them one on top of the other */
     @media (max-width: 767px) {
         .narrow {
             width: 100%;
