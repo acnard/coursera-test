@@ -113,6 +113,8 @@ at which point it completes the git push:
 
 <img src="image-20211119151135780.png" alt="image-20211119151135780" style="zoom:50%;" />
 
+at which point, for future commits, you do not need to enter your github credentials any more
+
 # git how tos (command line)
 
 ## clone remote repository to local machine
