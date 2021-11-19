@@ -12,7 +12,63 @@
 - [ ] install browsersync, if you google it'll tell you the command to use, which is *npm install -g browser-sync*
   - [ ] as usual, to check in CMD type *browser-sync --version*
 
+# Install git on windows
 
+download location 
+
+![image-20211119144257629](image-20211119144257629.png)
+
+run the installer
+
+<img src="image-20211119144341339.png" alt="image-20211119144341339" style="zoom:67%;" />
+
+on the Lenovo, I changed the install location to D:
+
+<img src="image-20211119144448953.png" alt="image-20211119144448953" style="zoom: 50%;" />
+
+kept default components to install
+
+<img src="image-20211119144514250.png" alt="image-20211119144514250" style="zoom:50%;" />
+
+picked notepad++ as default editor because I do not have VS Code installed (and anyhow I think this is only commit messages)
+
+<img src="image-20211119144620530.png" alt="image-20211119144620530" style="zoom:67%;" />
+
+set the default branch name to "main" (rather than "master")
+
+<img src="image-20211119144659741.png" alt="image-20211119144659741" style="zoom:67%;" />
+
+set git to run from the command line 
+
+<img src="image-20211119144737540.png" alt="image-20211119144737540" style="zoom:67%;" />
+
+other settings for SSH
+
+<img src="image-20211119144854604.png" alt="image-20211119144854604" style="zoom:67%;" />
+
+<img src="image-20211119144934977.png" alt="image-20211119144934977" style="zoom:67%;" />
+
+line ending conventions
+
+<img src="image-20211119145037259.png" alt="image-20211119145037259" style="zoom:67%;" />
+
+windows default console rather than MinTTy
+
+<img src="image-20211119145114985.png" alt="image-20211119145114985" style="zoom:50%;" />
+
+default git pull behavior
+
+<img src="image-20211119145138585.png" alt="image-20211119145138585" style="zoom:67%;" />
+
+new credential helper
+
+<img src="image-20211119145201812.png" alt="image-20211119145201812" style="zoom:67%;" />
+
+other options left as default
+
+<img src="image-20211119145226115.png" alt="image-20211119145226115" style="zoom:67%;" />
+
+after this it installs. When finished you in CMD you can do git --version to check
 
 # git how tos (command line)
 
