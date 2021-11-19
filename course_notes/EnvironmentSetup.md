@@ -14,13 +14,15 @@
 
 # Install git on windows
 
-download location 
+## download location 
 
 ![image-20211119144257629](image-20211119144257629.png)
 
 run the installer
 
 <img src="image-20211119144341339.png" alt="image-20211119144341339" style="zoom:67%;" />
+
+## installer options
 
 on the Lenovo, I changed the install location to D:
 
@@ -68,7 +70,48 @@ other options left as default
 
 <img src="image-20211119145226115.png" alt="image-20211119145226115" style="zoom:67%;" />
 
+## check that git installed
+
 after this it installs. When finished you in CMD you can do git --version to check
+
+Then, for example you can use git clone [github url] to clone a remote repository to this local machine.
+
+## set up identity
+
+when you try to do your first commit it will complain because you've yet to set up your identity: 
+<img src="image-20211119145640472.png" alt="image-20211119145640472" style="zoom:67%;" />
+
+to do this:
+
+git config --global user.email "nardella.anna@gmail.com"
+
+git config --global user.name "Anna Nardella"
+
+nb the --global option sets this identity for all repositories
+
+after doing this, git config --list will show you that the identity is set:
+
+<img src="image-20211119150132837.png" alt="image-20211119150132837" style="zoom:67%;" />
+
+at which point the commit works (it fires up notepad++ for entering the commit message, after which you must save and close the editor)
+
+## store github credentials
+
+the first time you do **git push**, you will see a connect to github dialog:
+
+<img src="image-20211119150805144.png" alt="image-20211119150805144" style="zoom:50%;" />
+
+If you choose sign in with your browser, you go to the credential manager page:
+
+<img src="image-20211119150859994.png" alt="image-20211119150859994" style="zoom:67%;" />
+
+There you enter your github credentials:
+
+<img src="image-20211119151032674.png" alt="image-20211119151032674" style="zoom:67%;" />
+
+at which point it completes the git push:
+
+<img src="image-20211119151135780.png" alt="image-20211119151135780" style="zoom:50%;" />
 
 # git how tos (command line)
 
