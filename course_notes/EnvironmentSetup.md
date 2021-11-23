@@ -250,3 +250,127 @@ this makes it watch the files in the current folder plus those in any subfolders
 
 
 
+# chrome developer tools
+
+## layout config
+
+to get the desired layout:
+
+1. In the chrome developer tools window, click the three-dot menu and choose the bottom-docking option 
+   <img src="image-20211121133221837.png" alt="image-20211121133221837" style="zoom:67%;" />
+2. Then click the gearwheel to open chrome dev tools settings
+   <img src="image-20211121133324663.png" alt="image-20211121133324663" style="zoom:50%;" />
+   and select the vertical panel layout:
+   <img src="image-20211121133426024.png" alt="image-20211121133426024" style="zoom:67%;" />
+
+This will give you the actual webpage on top, and underneath it the html and styles side-by side, and the console under that.:
+
+<img src="image-20211121133541372.png" alt="image-20211121133541372" style="zoom:67%;" />
+
+# Bootstrap
+
+From **getbootstrap.com** you can download compiled CSS and JS:
+
+<img src="image-20211121125734958.png" alt="image-20211121125734958" style="zoom:80%;" />
+
+The zip you download from there contains a css folder and a js folder with all the bootstrap files:
+
+<img src="image-20211121130721060.png" alt="image-20211121130721060" style="zoom:80%;" /> 
+
+nb in the lecture it says you also have to install jquery, which bootstrap depends on, however bootstrap 5 non longer depends on jquery.
+
+## lecture 25 example
+
+In the lecture25 example, styles.css is initially an empty file where we define our own css styles (overriding/customizing the bootstrap ones), and for this reason we must declare it *after* bootstrap.min.css.
+
+nb bootstrap.min.css is just bootstrap.css with all unnecessary whitespace taken out, for faster performance.
+
+Similarly script.js is an initally empty file into which we can put in our own add-on javascript, and we likewise declare this after the bootstrap js files.
+
+<img src="image-20211121131923201.png" alt="image-20211121131923201" style="zoom:67%;" />
+
+## my own example with bootstrap 5
+
+to re-create the above with bootstrap 5, I did *not* download jquery. I just copied the bootstrap css and js folders into my working directory and created an index html file similar to the above, only I removed the reference to jquery
+
+<img src="image-20211121134510572.png" alt="image-20211121134510572" style="zoom:67%;" />
+
+This initially gave me errors in the console because I hadn't put the empty script.js and styles.css files into the folders yet. But once I added the files the errors went away
+
+## grid system
+
+you always have to have an outermost container, which can contain rows that in their turn contain columns:
+
+![image-20211121140647525](image-20211121140647525.png)
+
+the column classes are interpreted like so.
+
+-  **Size** specifies a screen size (eg, md = medium) from which those columns apply (for smaller screen sizes the columns will collapse and just stack one on top of the other, *unless* there is another rule that applies.)
+- **Span** is just how many columns (of the total 12) the element should span
+
+<img src="image-20211121140723403.png" alt="image-20211121140723403" style="zoom:50%;" />
+
+Bootstrap is a 12- column grid. If on a row you specify elements whose spans add up to more than 12, they will wrap onto another row. For example, if I have four columns of span 4:
+<img src="image-20211121141310161.png" alt="image-20211121141310161" style="zoom:50%;" />
+
+nb you don't have to use divs to use the bootstrap classes, you can also apply them to other html elements: 
+<img src="image-20211121141423271.png" alt="image-20211121141423271" style="zoom:50%;" />
+
+## container vs container-fluid
+
+- container toggles between different fixed-width layouts at the various screen size breakpoints. 
+
+- container-fluid also toggles, but in addition to this stretches/contracts to fit in between breakpoints.
+
+## breakpoints
+
+the bootstrap documentations shows to what the md, lg, sm, and other size breakpoints correspond.
+
+<img src="image-20211121144254090.png" alt="image-20211121144254090" style="zoom:67%;" />
+
+nb cf how these have changed relative to the older version of bootstrap (below): 
+in practice, *the old sm is now md, the old md is now lg, and the old lg is now xl*
+
+<img src="image-20211121162133127.png" alt="image-20211121162133127"  />
+
+so in my case (md) as I shrink the screen down the columns continue to be side-by-side, down to a width of 768. But the moment I go to 767pixels, the columns stack  (the below is with the fluid-container, so the columns also stretch to fill whatever horizontal space is available in either case)
+
+<img src="image-20211121144708687.png" alt="image-20211121144708687" style="zoom:67%;" />
+
+<img src="image-20211121144737790.png" alt="image-20211121144737790" style="zoom:67%;" />
+
+with the regular (non-fluid) container, the result is instead as below : 
+
+<img src="image-20211121144920948.png" alt="image-20211121144920948" style="zoom:67%;" />
+
+<img src="image-20211121144856881.png" alt="image-20211121144856881" style="zoom:67%;" />
+
+## multiple classes (breakpoints) per column 
+
+ I can do something like this, 
+
+<img src="image-20211121145303087.png" alt="image-20211121145303087" style="zoom:67%;" />
+
+and now, when I go below 678 pixels, instead of just stacking it will apply the span I've specified for **sm** screen size, ie that each column in that case should have a span of 6. This means each column will take up half the screen (since there are 12 columns total in the bootstrap grid). So the third column will overflow.
+
+<img src="image-20211121145446710.png" alt="image-20211121145446710" style="zoom:67%;" />
+
+two rows with overflow look like this (added margin to have some space between rows):
+
+<img src="image-20211121145900153.png" alt="image-20211121145900153" style="zoom:67%;" />
+
+This sm column span applies down to 576 pixels:
+
+<img src="image-20211121150444701.png" alt="image-20211121150444701" style="zoom: 50%;" />
+
+But as soon as we go below that it stacks: 
+
+<img src="image-20211121150530451.png" alt="image-20211121150530451" style="zoom: 50%;" />
+
+## specify xsmall column span
+
+to specify what column span you want *below* the **sm** one, just use no infix at all, and that will apply down to zero pixels.: For example, here in the second row, the col-8 says that below the sm breakpoint we want the span to be 8 columns. If you *just* specified this (removing the md and sm spans) then the 8-column span would apply no matter what.
+
+<img src="image-20211121151520003.png" alt="image-20211121151520003" style="zoom:80%;" /> 
+
+  
