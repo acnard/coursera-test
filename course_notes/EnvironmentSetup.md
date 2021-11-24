@@ -198,11 +198,41 @@ To stage all the changes you have made (including deletions!) you can use the co
 
 now everything is staged  and I can do **git commit** followed by a **git push**.
 
+## fetch changes from remote
 
+before you start working on your local copy you should do a fetch to get all changes that might have happened in the remote repository in the  meantime.  For example, in my case I had worked on this project on the Lenovo computer and pushed the changes to github. Now I want to work on these files on my Dell computer. 
+
+- If I just do git status, it tells me everything is all right (it doesn't know about the changes that have happened on github).
+
+- So I need to do `git fetch origin`   so that it finds out that the local clone is actually behind the remote origin.<img src="image-20211124104042776.png" alt="image-20211124104042776" style="zoom: 80%;" />
+
+- At this point, I can do `git pull` to merge all the remote changes into my local branch (which happens to be main) <img src="image-20211124104647808.png" alt="image-20211124104647808" style="zoom:67%;" /> 
+
+ Now I see that the new stuff that I had on the remote (eg the mybootstrap folder) is present on the Dell computer: 
+<img src="image-20211124104807552.png" alt="image-20211124104807552" style="zoom: 67%;" />
+
+NB. probably, on visualstudio Code, when you do a synchronize it does a fetch (or pull?) before pushing any of your local changes
+
+## simultaneous changes from two computers
+
+Now on the Dell computer my status is
+ <img src="image-20211124105501552.png" alt="image-20211124105501552" style="zoom: 80%;" />
+
+everything is caught up with the origin, except that I kept working on the notes markdown file, and added some screenshots, and these changes are not staged yet.
+
+Meanwhile, on the Lenovo computer, I also had some changes that I hadn't commited or pushed to remote. Specifically, there I'd modified the files: EnviornmentSetup.md, and under mybootstrap, styles.css and index.html. And there was also a new file (my logo AnnaLongHairColor.jpg)
+
+So what I want to do now is first commit and push the changes on the Lenovo, and then on the Dell see if I can fetch and merge them without confilicts:
+
+1. On the Lenovo, I first do a `git fetch origin` which responds with nothing, meaning there is nothing different on the remote to fetch (as expected) . So I go on and do `git add -A`  then do `git commit` with message `bootstrap navigation bar`  (these were the last changes I'd done there). Now my branch is ahead of origin by one commit, and I go ahead and do `git push`. At this point all the navigation bar changes are on the remote.
+
+2. On the DELL, my status is meanwhile the same as above (I have some unstaged changes). So let me try first to do a `git fetch` from the remote, where it tells me I am behind by one commit (the navigation bar one). I try to do a `git pull` to update my local branch with those changes, but it tells me I can't do that because of my uncommitted changes: <img src="image-20211124111837234.png" alt="image-20211124111837234" style="zoom:80%;" />
+
+3. So I first add and commit the local changes on the Dell machine, then try to do a git fetch/pull again.
+
+    
 
  
-
-
 
 
 
