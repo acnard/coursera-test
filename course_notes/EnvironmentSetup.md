@@ -229,11 +229,26 @@ So what I want to do now is first commit and push the changes on the Lenovo, and
 
 2. On the DELL, my status is meanwhile the same as above (I have some unstaged changes). So let me try first to do a `git fetch` from the remote, where it tells me I am behind by one commit (the navigation bar one). I try to do a `git pull` to update my local branch with those changes, but it tells me I can't do that because of my uncommitted changes: <img src="image-20211124111837234.png" alt="image-20211124111837234" style="zoom:80%;" />
 
-3. So I first add and commit the local changes on the Dell machine, then try to do a git fetch/pull again.
+3. So I first add and commit the local changes on the Dell machine, then try to do a git fetch/pull again. <img src="image-20211124113040970.png" alt="image-20211124113040970" style="zoom:80%;" />
 
     
 
- 
+ Now on the Dell my bootstrap index.html file shows the navigation bar changes that I'd done on the Lenovo: 
+<img src="image-20211124113613392.png" alt="image-20211124113613392" style="zoom:67%;" />
+
+The file that had been modified on both computers (EnvironmentSetup.md) contains the merge of changes done on both sides.
+
+## git graph
+
+with the git graph VS code extension, I can see the diffs of this merge:
+<img src="image-20211124120035663.png" alt="image-20211124120035663" style="zoom:80%;" />
+
+On the graph, you can select the merge commit and inspect the diffs: 
+<img src="image-20211124120758379.png" alt="image-20211124120758379" style="zoom:67%;" /> 
+
+
+
+
 
 
 
@@ -337,7 +352,7 @@ This initially gave me errors in the console because I hadn't put the empty scri
 
 you always have to have an outermost container, which can contain rows that in their turn contain columns:
 
-![image-20211121140647525](image-20211121140647525.png)
+<img src="image-20211121140647525.png" alt="image-20211121140647525" style="zoom:67%;" />
 
 the column classes are interpreted like so.
 
