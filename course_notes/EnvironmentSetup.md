@@ -5,12 +5,12 @@
 - [ ] code editor (VS Code or SublimeText3)
 - [ ] install git for windows 
   - [ ] enable windows command prompt, and windows default console window
-  - [ ] to check, in the command prompt type *git --version*
+  - [ ] to check, in the command prompt type `git --version`
 - [ ] install node.js for windows (we need this to install browsersync)
-  - [ ] to check, from command prompt type *node--version*
-  - [ ] it'll also install the node package manager (nmp), to check at cmd prompt type *npm --version*
+  - [ ] to check, from command prompt type `node--version`
+  - [ ] it'll also install the node package manager (nmp), to check at cmd prompt type `npm --version`
 - [ ] install browsersync, if you google it'll tell you the command to use, which is *npm install -g browser-sync*
-  - [ ] as usual, to check in CMD type *browser-sync --version*
+  - [ ] as usual, to check in CMD type `browser-sync --version`
 
 # Install git on windows
 
@@ -72,9 +72,9 @@ other options left as default
 
 ## check that git installed
 
-after this it installs. When finished you in CMD you can do git --version to check
+after this it installs. When finished you in CMD you can do `git --version` to check
 
-Then, for example you can use git clone [github url] to clone a remote repository to this local machine.
+Then, for example you can use `git clone [github url]` to clone a remote repository to this local machine.
 
 ## set up identity
 
@@ -83,13 +83,14 @@ when you try to do your first commit it will complain because you've yet to set 
 
 to do this:
 
+```
 git config --global user.email "nardella.anna@gmail.com"
-
 git config --global user.name "Anna Nardella"
+```
 
-nb the --global option sets this identity for all repositories
+nb the `--global` option sets this identity for all repositories
 
-after doing this, git config --list will show you that the identity is set:
+after doing this, `git config --list` will show you that the identity is set:
 
 <img src="image-20211119150132837.png" alt="image-20211119150132837" style="zoom:67%;" />
 
@@ -150,14 +151,14 @@ Now, what I want to do is have also my course notes and test files in the reposi
 so what I'll do is move the *course_notes* folder under coursera-test and see what happens:
 <img src="image-20211117114226079.png" alt="image-20211117114226079" style="zoom:67%;" />
 
-it recognizes that I've added this folder and tells me it is not tracked. So now I have to do *git add course_notes*: it should recursively add everything contained in that directory. 
+it recognizes that I've added this folder and tells me it is not tracked. So now I have to do `git add course_notes`: it should recursively add everything contained in that directory. 
 <img src="image-20211117114937824.png" alt="image-20211117114937824" style="zoom: 80%;" />
 
-and now it stages all the new files in the folder. NB the files are staged exactly as they were when you did git add. And then when you commit it is the staged version that gets used. So if you do any subsequent changes you need to restage.
+and now it stages all the new files in the folder. NB the files are staged exactly as they were when you did `git add`. And then when you commit it is the staged version that gets used. So if you do any subsequent changes you need to restage.
 
 ## commit the changes
 
-Now I can do **git commit** to commit the newly staged files: I need to enter a message in my preconfigured editor (which is VS code)
+Now I can do `git commit` to commit the newly staged files: I need to enter a message in my preconfigured editor (which is VS code)
 
 ![image-20211117115704270](image-20211117115704270.png)
 
@@ -166,7 +167,7 @@ at which point the changes are commited:
 
 ## push commits to remote repository
 
-At this point if I do a git status I will see that some changes are not staged (because I am editing inside course_notes, so there are new changes there), but I can push the changes that *have* been staged by doing git push.
+At this point if I do a git status I will see that some changes are not staged (because I am editing inside course_notes, so there are new changes there), but I can push the changes that *have* been staged by doing `git push`.
 ![image-20211117120337530](image-20211117120337530.png)
 
 And after this I expect to see the new files in the remote repository on github:
@@ -188,12 +189,12 @@ The name and email I'd previously set globally (you could also do it repository-
 
 ## stage all changes (untracked files, changed files, and deleted files) 
 
-after adding some new folders to the cursera-test folder, I did git add on those folder names to start tracking all the files in them. Then, when I did git status I got this: 
+after adding some new folders to the coursera-test folder, I did git add on those folder names to start tracking all the files in them. Then, when I did git status I got this: 
 <img src="image-20211117123704687.png" alt="image-20211117123704687" style="zoom:67%;" />
 
 it had staged the files inside the newly added folders, but there had also been some changes elsewhere, which were not staged.
 
-To stage all the changes you have made (including deletions!) you can use the command **git add -A**:
+To stage all the changes you have made (including deletions!) you can use the command `git add -A`:
 <img src="image-20211117123846517.png" alt="image-20211117123846517" style="zoom:80%;" />
 
 now everything is staged  and I can do **git commit** followed by a **git push**.
@@ -221,7 +222,7 @@ And if I edit the pages URL appropriately I can view the html file :
 
 - To install this you need to first install node.js for windows (which installs node package manager, npm)
 
-- Once that is done you can use the command  *npm install -g browser-sync*
+- Once that is done you can use the command  `npm install -g browser-sync`
 
 - When browser-sync is installed, from the command line you should be able to check its version: 
 
@@ -233,7 +234,7 @@ To start browsersync, you first navigate to the folder in which you want to sync
 
 <img src="image-20211117125148457.png" alt="image-20211117125148457" style="zoom:80%;" />
 
-where --directory just gives you a listing of the folder you are in, and --files "*" says to sync changes in all files in the folder. 
+where `--directory` just gives you a listing of the folder you are in, and `--files "*"` says to sync changes in all files in the folder. 
 
 So in my case the command is: 
 <img src="image-20211117125433035.png" alt="image-20211117125433035" style="zoom:67%;" />
@@ -243,7 +244,12 @@ and now at the access URL it shows me the folder being synced:
 
 however this doesn't actually work because the command does NOT include subfolders, so it'll only watch the files in the folder where you started browser sync. 
 
-Instead, what you need to do is: browser-sync start --server --files="**/*"
+Instead, what you need to do is: 
+
+```
+browser-sync start --server --files="**/*"
+```
+
 ![image-20211117131425197](image-20211117131425197.png)
 
 this makes it watch the files in the current folder plus those in any subfolders (in my case, the css folder)
