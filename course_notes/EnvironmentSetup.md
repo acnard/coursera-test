@@ -246,6 +246,20 @@ with the git graph VS code extension, I can see the diffs of this merge:
 On the graph, you can select the merge commit and inspect the diffs: 
 <img src="image-20211124120758379.png" alt="image-20211124120758379" style="zoom:67%;" /> 
 
+## overall workflow with git branching
+
+1. `git fetch` to check if there is anything updated on origin (if there is nothing, the command gives no output).
+2. `git pull` to retrieve changes from origin (remote repository) 
+3. when you start working on a feature, do `git branch branchname`  to create a branche and then `git checkout branchname` to switch to that branch.
+   - You can do `git branch` to see a list of all the branches, the current one will have a star next to it.
+4. Start making your changes on the branch. 
+   - At any time, you can switch back to the main branch with `git checkout main` and it will put your files back exactly as they were before you started making those changes.
+   - Add and commit your changes to the branch as usual, with `git add -A` followed by `git commit`.
+5.  When the changes in the branch are done (and all committed), and you want to merge them into the main stream: 
+   - first do `git checkout main` to return to the main branch
+   - then do `git  merge branchname` : this will bring the changes you made on the branch into your main stream.
+6. Do a `git push` to update the remote. Note that the remote will not know about the branch you created as this was created and merged on the local machine before doing any push. I suppose it would know about it if you did a push while the branch was still unmerged. 
+
 
 
 

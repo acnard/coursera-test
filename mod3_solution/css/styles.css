@@ -1,29 +1,71 @@
 body {
-    background-color: rgb(176, 204, 119) ;
+    background-color: tomato ;
+   /* background: url("../images/parrots.png") no-repeat;
+    background-size: 100%;*/
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-h3 {
-    color: olivedrab;
-}
-
-h2 {
-    color: rgb(66, 83, 17)
-
-}
-/* the visible text boxes that go inside each grid column section */
+/* remove underline from all links */
 a {
     text-decoration: none;
 }
 
+/* headings */
+h1{
+    color: honeydew;
+}
+
+h2 {
+    color: gold;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+h3 {
+    color: cornflowerblue;
+}
+
+/* navigation header */
+#header-nav {
+    background-color: olive;
+    /*border: solid 2px olive;*/
+    
+}
+
+
+/* drop-down menu */
+#navlist {
+    background-color: honeydew;
+}
+#navlist li{
+    border: solid 2px seagreen;    
+}
+
+#navlist li + li {
+    border-top: none;   /* avoids a double border between menu items */
+}
+#navlist li:hover {
+    background-color: darkgreen;
+}
+
+#navlist li a {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+#navlist li a:hover {
+    color: white;
+}
+
+/* the visible text boxes */
  .box {
     border: 1px solid black;
-    height: 700px;
+    height: 400px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    background-color: ivory;
+    background-color: gold;
+    opacity: .9;
     color: black;
     padding: 10px;
     position: relative;   /*create anchor for the offsets of titles that go inside*/

@@ -16,18 +16,26 @@
   </head>
   <body>
     <header>
-      <nav id="header-nav" class="navbar navbar-dark bg-secondary py-0 border border-2 border-dark">
+      <!-- we don't use navbar-expand in our navbar wrapper here because we don't want the menu items to expand side-by-side on the navigation bar -->
+      <nav id="header-nav" class="navbar navbar-dark py-0">
+          <!-- inside the navbar you have to have a nested container -->
           <div class="container-fluid px-0">
+              <!-- this is the brand, always visible -->
               <a class="navbar-brand m-3" href="index.html"><h1>Food, LLC</h1></a>
-              <!--d-md-none hides button AND the menu items list on screens >=medium (768px) --> 
+              
+              <!-- this is the hamburger button, d-md-none hides it on screens >=medium (768px), data-bs-target defines the id of the div containing the items that will open when the button is clicked --> 
               <button class="navbar-toggler d-md-none m-3"" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              
+              <!-- these are the full-width menu items that open up when the menu button is clicked, collapse and navbar-collapse are both required classes here -->
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto text-center  d-md-none bg-light">
-                  <li class="nav-item border border-2 border-dark"> <a class="link-danger fw-bold" href="#chicken">Chicken</a></li>
-                  <li class="nav-item border border-2 border-dark"><a class="link-danger  fw-bold" href="#beef">Beef</a></li>
-                  <li class="nav-item border border-2 border-dark"><a class="link-danger fw-bold" href="#sushi">Sushi</a></li>
+                <!--d-md-none hides the menu items list on screens >=medium (768px) --> 
+                <!-- navbar-nav makes this unordered list look like a menu  and nav-link makes the entire list item line clickable -->
+                <ul class="navbar-nav d-md-none me-auto text-center" id="navlist">
+                  <li class="nav-item "> <a class="nav-link" href="#chicken">Chicken</a></li>
+                  <li class="nav-item "><a class="nav-link" href="#beef">Beef</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#sushi">Sushi</a></li>
                 </ul>
               </div>
         </div>
@@ -36,8 +44,7 @@
 
     <h2 class="text-center my-4">Our Menu</h2>
 
-
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-12 py-2"> <div class="box"><h3 id="chicken" class="text-center">Chicken</h3> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem saepe quibusdam, reiciendis commodi, molestiae vero facere ex numquam aliquam doloremque voluptates ab voluptatem earum officia repellendus assumenda ipsum obcaecati. Dignissimos! Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ad modi possimus iusto eaque. Quia tenetur nobis et voluptates. Optio voluptatibus incidunt aut ducimus dolores iste in earum, quia ab. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ex iusto distinctio tempora consequuntur corrupti in doloremque quidem odit dicta debitis laboriosam voluptas rem aliquam, eveniet quisquam a possimus omnis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo voluptatem doloremque, laudantium autem ducimus itaque, iste sequi explicabo reprehenderit amet facilis alias earum nesciunt illum incidunt ea labore saepe possimus? <a href="#header-nav">Back to top</a> </div></div>
           <div class="col-lg-4 col-md-6 col-sm-12 py-2"><div class="box"><h3 id="beef" class="text-center">Beef</h3> Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati similique perspiciatis suscipit? Aliquid inventore est, porro tempora delectus minima ducimus adipisci, at reprehenderit labore iusto velit optio perferendis! Reiciendis, dolor! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore fugit ut sapiente hic quidem eaque ex soluta facilis placeat et? Quasi illo harum reiciendis blanditiis sunt libero, eius ullam est! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum necessitatibus temporibus fugiat mollitia veniam praesentium a placeat esse ipsa aliquid autem voluptate tempore eius ea deserunt sapiente consequuntur, alias vitae. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sapiente illum quibusdam rem reprehenderit veritatis vel distinctio ipsam, magnam quos provident accusantium. s, dolore modi aliquam unde mollitia nostrum! Consequatur delectus ea sed quos voluptatibus? <a href="#header-nav">Back to top</a></div></div>        
