@@ -6,11 +6,54 @@
 - [ ] install git for windows 
   - [ ] enable windows command prompt, and windows default console window
   - [ ] to check, in the command prompt type `git --version`
-- [ ] install node.js for windows (we need this to install browsersync)
+- [ ] install node.js for windows (we need this to install browsersync, can skip this and following step if you instead use Live Server extension for VS code instead)
   - [ ] to check, from command prompt type `node--version`
   - [ ] it'll also install the node package manager (nmp), to check at cmd prompt type `npm --version`
 - [ ] install browsersync, if you google it'll tell you the command to use, which is *npm install -g browser-sync*
   - [ ] as usual, to check in CMD type `browser-sync --version`
+
+# VS Code
+
+## installation
+
+for the Lenovo, from code.visualstudio.com, downloaded the 64-bit system installer for windows (so it'll install for all users):
+
+<img src="image-20211210130940921.png" alt="image-20211210130940921" style="zoom:50%;" />
+
+<img src="image-20211210131039730.png" alt="image-20211210131039730" style="zoom:50%;" />
+
+For this computer, I changed the install directory to under D:, since C: is pretty full
+
+<img src="image-20211210131239357.png" alt="image-20211210131239357" style="zoom:50%;" />
+
+I left the other settings at the default, except that I checked "create a desktop icon"
+
+<img src="image-20211210131405601.png" alt="image-20211210131405601" style="zoom:50%;" />
+
+## settings
+
+- I set the **Monokai** dark color theme 
+- Emmet is integrated by default into Code
+
+other need to add:
+
+- markdown
+- git lens/history
+
+## Live Server extension (instead of browsersync)
+
+Install in VS code: <img src="image-20211214123432271.png" alt="image-20211214123432271" style="zoom:67%;" />
+
+Then right-cilck the file in the VS Code file explorer pane and pick Open with Live Server: 
+<img src="image-20211214123626269.png" alt="image-20211214123626269" style="zoom:67%;" />
+
+The first time, you have to allow VS Code through the firewall: 
+<img src="image-20211214123747331.png" alt="image-20211214123747331" style="zoom:67%;" />
+
+and it opens your html page with the local server in the default browser: 
+<img src="image-20211214123909843.png" alt="image-20211214123909843" style="zoom:67%;" />
+
+any changes you make in the source are automatically shown without having to manually reload the page 
 
 # Install git on windows
 
@@ -278,6 +321,8 @@ And if I edit the pages URL appropriately I can view the html file :
 <img src="image-20211117122649598.png" alt="image-20211117122649598" style="zoom: 67%;" />
 
 # Browsersync
+
+nb in VS code as an alternative to this you can use the Live Server extension
 
 - To install this you need to first install node.js for windows (which installs node package manager, npm)
 
